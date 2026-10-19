@@ -1,5 +1,8 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Post } from "../../types/post";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
 
 interface PostsState {
     posts: Post[];
@@ -11,20 +14,36 @@ const initialState: PostsState = {
     loading: false,
 };
 
+export const fetchPosts = createAsyncThunk(
+    "posts/fetchPosts",
+    async () => {
+
+        console.log("FETCHING POSTS...");
+
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+        return response.data;
+    }
+);
+
 const postsSlice = createSlice({
     name: "posts",
     initialState,
-    reducers: {
-        setPosts: (state, action: PayloadAction<Post[]>) => {
-            state.posts = action.payload;
-        },
-
-        setLoading: (state, action: PayloadAction<boolean>) => {
-            state.loading = action.payload;
-        },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchPosts.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(fetchPosts.fulfilled, (state, action) => {
+                state.loading = false;
+                state.posts = action.payload;
+            })
+            .addCase(fetchPosts.rejected, (state) => {
+                state.loading = false;
+            });
     },
 });
 
-export const { setPosts, setLoading } = postsSlice.actions;
+
 
 export default postsSlice.reducer;
