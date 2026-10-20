@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { fetchPosts } from "../../store/posts.slice";
+import { fetchPosts } from "../../store/PostSlice";
 import { useState } from "react";
 import type { Post } from "../../../types/post";
 
