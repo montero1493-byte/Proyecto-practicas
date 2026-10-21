@@ -3,8 +3,11 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchPosts } from "../../store/PostSlice";
 import { useState } from "react";
 import type { Post } from "../../../types/post";
+import {useNavigate} from "react-router-dom";
 
 const PostsPage = () => {
+    const navigate = useNavigate();
+
     const dispatch = useAppDispatch();
 
     const posts = useAppSelector((state) => state.posts.posts);
@@ -26,27 +29,30 @@ const PostsPage = () => {
 
     const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
+/*
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
 
     const [editingPostId, setEditingPostId] = useState<number | null>(null);
+*/
 
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
-
+/*    
     const handleEdit = (post: Post) => {
         setEditingPostId(post.id);
         setTitle(post.title);
         setBody(post.body);
     };
+*/    
 
     const handleDelete = (id: number) => {
         // Aquí puedes implementar la lógica para eliminar un post
         console.log(`Eliminar post con ID: ${id}`);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    /*const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!title.trim() || !body.trim()) {
@@ -65,11 +71,12 @@ const PostsPage = () => {
         setTitle("");
         setBody("");
         setEditingPostId(null);
-    };
+    }; */
 
     if (loading) {
         return <p>Loading...</p>;
-    }
+    };
+
 
     return (
         <>
@@ -102,30 +109,9 @@ const PostsPage = () => {
             </button>
             </div>
 
-            <form onSubmit={handleSubmit}>
-                <input
-                type="text"
-                placeholder="Título"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                />
-                <textarea
-                    placeholder="Contenido"
-                    value={body}
-                    onChange={(e) => setBody(e.target.value)}
-                />
-                <button type="submit">Guardar</button>
+            <button onClick={() => navigate("/posts/create")}>Crear Nuevo Post</button>
 
-                {editingPostId && (
-                    <button type="button" onClick={() => {
-                        setEditingPostId(null);
-                        setTitle("");
-                        setBody("");
-                    }}>
-                      Cancelar
-                      </button>
-                )}
-            </form>
+            
             <div>
                         <table>
                             <thead>
@@ -141,7 +127,7 @@ const PostsPage = () => {
                                         <td>{post.id}</td>
                                         <td>{post.title}</td>
                                         <td>
-                                            <button onClick={() => handleEdit(post)}>Editar</button>
+                                            {/* <button onClick={() => handleEdit(post)}>Editar</button> */}
                                             <button onClick={() => handleDelete(post.id)}>Borrar</button>
                                         </td>
                                     </tr>
