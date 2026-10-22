@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 
+const prueba = 1
+
 export const Breadcrumbs = () => {
     const location = useLocation();
 
