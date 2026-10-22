@@ -21,6 +21,7 @@ const CreatePostPage = () => {
 
     await dispatch(createPost({ title, body: body, userId: 1 }));
 
+    dispatch({ type: "posts/setSuccessMessage", payload: "Post creado exitosamente" });
     navigate("/posts");
   };
 
