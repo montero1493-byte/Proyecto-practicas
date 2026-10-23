@@ -1,7 +1,8 @@
 import {useState} from 'react';
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch } from "../../store/hooks/hooks";
 import { createPost } from "../../store/PostSlice";
 import { useNavigate } from "react-router-dom";
+
 
 const CreatePostPage = () => {
   const [title, setTitle] = useState('');
@@ -21,8 +22,8 @@ const CreatePostPage = () => {
 
     await dispatch(createPost({ title, body: body, userId: 1 }));
 
-    dispatch({ type: "posts/setSuccessMessage", payload: "Post creado exitosamente" });
-    navigate("/posts");
+
+    navigate("/posts", {state: {successMessage: "Post creado"}});
   };
 
   return (
