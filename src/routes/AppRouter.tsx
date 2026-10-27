@@ -5,7 +5,7 @@ import MainLayout from "../components/layout/MainLayout";
 import HomePage from "../app/pages/home/HomePage";
 import PostsPage from "../app/pages/posts/PostPage";
 import CreatePostPage from "../app/pages/posts/CreatePostPage";
-import EditPostPage from "../app/pages/posts/EditPostPage";
+import PostDetailPage from "../app/pages/posts/PostDetailPage";
 import LoginPage from "../app/pages/auth/LoginPage";
 import RegisterPage from "../app/pages/auth/RegisterPage";
 import ProfilePage from "../app/pages/profile/ProfilePage";
@@ -32,8 +32,8 @@ const AppRouter = () => {
                     />
 
                     <Route
-                        path="/posts/edit/:id"
-                        element={<EditPostPage />}
+                        path="/posts/detail/:id"
+                        element={<PostDetailPage />}
                     />
 
                     <Route
