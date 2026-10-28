@@ -1,13 +1,18 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { fetchPosts } from "../../store/PostSlice";
 import { useState } from "react";
-import type { Post } from "../../../types/post";
 import {useNavigate} from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Toast from "../../../components/toast/Toast"
+
+
+const POSTS_PER_PAGE = 10;
+const TOAST_DURATION = 3000;
 
 const PostsPage = () => {
+    const location = useLocation();
     const navigate = useNavigate();
-
     const dispatch = useAppDispatch();
 
     const posts = useAppSelector((state) => state.posts.posts);
@@ -15,12 +20,37 @@ const PostsPage = () => {
     const loading = useAppSelector((state) => state.posts.loading);
 
     const [search, setSearch] = useState("");
+    const [page, setPage] = useState(1);
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+    
+
+    const showSuccessMessage = (
+        message: string
+    ): void => {
+        setSuccessMessage(message);
+    };
+
+
+    useEffect(() => {
+        if (location.state?.successMessage) {
+            showSuccessMessage(location.state.successMessage);
+        }
+    }, [location.state]);
+
+    useEffect(() => {
+        if (!successMessage) {
+            return;
+        }
+
+        const timer = setTimeout(() => {
+            setSuccessMessage(null);
+        }, TOAST_DURATION);
+
+        return () => clearTimeout(timer);
+    }, [successMessage]);
 
     //Paginacion
-    const [page, setPage] = useState(1);
-
-    const POSTS_PER_PAGE = 10;
-
     const filteredPosts = posts.filter((post) =>
         post.title.toLowerCase().includes(search.toLowerCase())
     );
@@ -39,9 +69,10 @@ const PostsPage = () => {
         return <p>Loading...</p>;
     };
 
-
     return (
         <>
+            {successMessage && (<Toast message={successMessage} />
+)}
             <header>
                 <h1>Mantenimiento de Posts</h1>
             </header>
