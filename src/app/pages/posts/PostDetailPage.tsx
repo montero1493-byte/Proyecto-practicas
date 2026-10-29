@@ -76,18 +76,18 @@ const handleDelete = () => {
         <p>ID: {id}</p>
 
           {!isEditing && (
-      <div>
+        <div>
           <h1>{post.title}</h1>
           <p>{post.body}</p>
 
           {!isGuest && (
+            <div>
             <button onClick={() => setIsEditing(true)}>Editar</button>
-          )}
-          {!isGuest && (
             <button onClick={handleDelete}>Eliminar</button>
+            </div>
           )}
       </div>
-)}
+          )}
 
           {isEditing && (
       <div>
