@@ -7,25 +7,27 @@ const ProfilePage = () => {
 
 
   return (
-    <div>
+    <div className="profile-page">
+      <div className="profile-card">
         <h1>Perfil</h1>
 
-        <p>
-          <strong>Usuario:</strong>
-          {username}
-        </p>
+        <div className="profile-info">
+          <span>Usuario:</span>
+          <span>{username}</span>
+        </div>
 
-        <p>
-          <strong>Email:</strong>
-          usuario@test.com
-        </p>
+        <div className="profile-info">
+          <span>Email:</span>
+          <span>usuario@test.com</span>
+        </div>
 
-        <p>
-          <strong>Rol:</strong>
-          {userType === "guest"
+        <div className="profile-info">
+          <span>Rol:</span>
+          <span>{userType === "guest"
             ? "Invitado"
-            : "Usuario"}
-        </p>
+            : "Usuario"}</span>
+        </div>
+      </div>  
     </div>
   );
 };

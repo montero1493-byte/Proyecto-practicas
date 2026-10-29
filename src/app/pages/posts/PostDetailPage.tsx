@@ -67,31 +67,32 @@ const handleDelete = () => {
 };
 
   return (
-    <>
+    <div className="detail-post-page">
       {message && (<Toast message={message} />
       )}
     
-    <div>
+      <div className="detail-post-card">
         <h1>Detalles</h1>
-        <p>ID: {id}</p>
+        <p className="post-id">ID: {id}</p>
 
-          {!isEditing && (
+          {!isEditing ? (
         <div>
           <h1>{post.title}</h1>
-          <p>{post.body}</p>
+
+          <div className="post-content">
+            {post.body}
+          </div>
 
           {!isGuest && (
-            <div>
+            <div className="post-actions">
             <button onClick={() => setIsEditing(true)}>Editar</button>
             <button onClick={handleDelete}>Eliminar</button>
             </div>
           )}
-      </div>
-          )}
-
-          {isEditing && (
-      <div>
-          <h2>Editar Post</h2>
+        </div>
+          ) : (
+        <div className="edit-post-form">
+          <h2>Editar Post</h2> 
           <input
               type="text"
               value={title}
@@ -102,10 +103,10 @@ const handleDelete = () => {
               onChange={(e) => setBody(e.target.value)}
           />
           <button onClick={() => handleSave()}>Guardar</button>
+        </div>
+          )}
       </div>
-)}
     </div>
-  </>
   );
 };
 

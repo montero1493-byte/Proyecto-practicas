@@ -1,0 +1,62 @@
+.detail-post-page {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+
+.detail-post-card {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--bg-card);
+    border: var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.detail-post-card h1 {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.post-id {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.post-content {
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+    white-space: pre-wrap;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.post-actions button {
+    min-width: 100px;
+}
+
+.edit-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.edit-post-form button {
+    width: fit-content;
+    align-items: flex-end;
+}
+
+.edit-post-form h2 {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.edit-post-form textarea {
+    width: 100%;
+    min-height: 180px;
+}

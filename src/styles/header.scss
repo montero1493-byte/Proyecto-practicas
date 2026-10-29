@@ -14,11 +14,11 @@
         rgba(0, 0, 0, 0.2);
 }
 
-.app-headerLogo {
+/*.app-headerLogo {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
-}
+}*/
 
 .app-headerNav {
     display: flex;
@@ -27,7 +27,7 @@
 }
 
 .app-headerNav a {
-    color: var(--text-secondary);
+    color: #b3b3b3;
     text-decoration: none;
     transition: 0.2s;
 }

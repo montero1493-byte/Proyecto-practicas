@@ -1,0 +1,35 @@
+.profile-page {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.profile-card h1 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-info span:first-child {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.profile-info span:last-child {
+    color: var(--text-primary);
+}
