@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useAppDispatch } from "./app/store/hooks/hooks.ts";
 import { fetchPosts } from "./app/store/PostSlice.ts";
 import './App.css'
+import "./styles/styles.scss"
 import AppRouter from './routes/AppRouter.tsx';
+
 
 function App() {
   const dispatch = useAppDispatch();

@@ -24,6 +24,10 @@ const HomePage = () => {
         "userType",
         "registered");
 
+      localStorage.setItem(
+        "username",
+        username);
+
       navigate("/posts");
     };
 
@@ -43,43 +47,52 @@ const HomePage = () => {
   
   return (
     <>
-        <h1>Bienvenido</h1>
+      <div className="login-page">
+        <div className="login-card">
+            <h1>Bienvenido</h1>
 
-        <form onSubmit={handleLogin}>
-          <div>
-            <label htmlFor="username">
-              Usuario
-            </label>
+            <form className="login-form" onSubmit={handleLogin}>
+              <div>
+                <label htmlFor="username">
+                  Usuario
+                </label>
 
-            <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(event) =>
-                setUsername(event.target.value)}/>
-          </div>
-          <div>
-            <label htmlFor="password">
-              Contraseña
-            </label>
+                <input
+                  id="username"
+                  type="text"
+                  value={username}
+                  onChange={(event) =>
+                    setUsername(event.target.value)}/>
+              </div>
+              <div>
+                <label htmlFor="password">
+                  Contraseña
+                </label>
 
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(event) =>
-                setPassword(event.target.value)}/>
-          </div>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(event) =>
+                    setPassword(event.target.value)}/>
+              </div>
 
-          <button type="submit">
-            Iniciar sesión
-          </button>
-        </form>
+              <div className="login-button ">
+                <button type="submit">
+                  Iniciar sesión
+                </button>
 
-        <button type="button"
-          onClick={handleGuestLogin}>
-            Entrar como invitado
-        </button>
+                <button type="button"
+                onClick={handleGuestLogin}>
+                  Entrar como invitado
+                </button>
+              </div>
+
+            </form>
+
+            
+        </div>
+      </div>
     </>
   );
 };

@@ -69,19 +69,15 @@ const PostsPage = () => {
         return <p>Loading...</p>;
     };
 
-    return (
-        <>
-            {successMessage && (<Toast message={successMessage} />
-)}
-            <header>
+return (
+    <>
+        {successMessage && (<Toast message={successMessage} />
+        )}
+            {/*<header>
                 <h1>Mantenimiento de Posts</h1>
-            </header>
-
-            <nav>
-                inicio / Posts
-            </nav>
-
-            <div>
+            </header>*/}
+        <br></br>
+        <div className="search-input">
             <input
                 value={search}
                 onChange={(e) => {
@@ -90,7 +86,7 @@ const PostsPage = () => {
                 }}
                 placeholder="Buscar por título"
             />            
-            </div>
+        </div>
             <br></br>
 
             {!isGuest && (
@@ -98,30 +94,24 @@ const PostsPage = () => {
             )}
 
             
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Titulo</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {paginatedPosts.map((post) => (
-                            <tr key={post.id}>
-                                <td>{post.id}</td>
-                                <td>{post.title}</td>
-                                <td>
-                                    <button onClick={() => navigate(`/posts/detail/${post.id}`)}>Ver Detalle</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <br></br>
+            <div className="posts-grid">
+    {paginatedPosts.map((post) => (
+        <div
+            key={post.id}
+            className="posts-card"
+            onClick={() =>
+                navigate(`/posts/detail/${post.id}`)
+            }
+        >
+            <h3>{post.title}</h3>
+
+            <p>
+                ID: {post.id}
+            </p>
+        </div>
+    ))}
+</div>
+            <div className="pagination">
                 <button disabled={page === 1} onClick={() => setPage(page - 1)}>
                 Anterior
                 </button>

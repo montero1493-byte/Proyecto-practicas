@@ -18,19 +18,21 @@ export const Header = () => {
 
     return (
         <>
-            <nav>
-                <Link to="/">Home</Link>
-                {" | "}
-                <Link to="/posts">Posts</Link>
-                {" | "}
-                <Link to="/dashboard">Dashboard</Link>
-                {" | "}
-                <Link to="/profile">Perfil</Link>
-            </nav>
+            <header className="app-header">
+                <nav className="app-headerNav">
+                    <Link to="/">Home</Link>
+                    {" | "}
+                    <Link to="/posts">Posts</Link>
+                    {" | "}
+                    <Link to="/dashboard">Dashboard</Link>
+                    {" | "}
+                    <Link to="/profile">Perfil</Link>
+                </nav>
 
-            <button type="button" onClick={handleuLogout}>
-                Cerrar Sesion
-            </button>
+                <button className="logout-link" onClick={handleuLogout}>
+                    Cerrar Sesion
+                </button>
+            </header>
         </>
     );
 };
