@@ -14,6 +14,8 @@ const PostDetailPage = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const isGuest = localStorage.getItem("userType") === "guest";
+
   const {message, showToast} = useToast();
 
   const post = useAppSelector((state) => state.posts.posts.find((post) => post.id === Number(id)));
@@ -74,13 +76,18 @@ const handleDelete = () => {
         <p>ID: {id}</p>
 
           {!isEditing && (
-      <div>
+        <div>
           <h1>{post.title}</h1>
           <p>{post.body}</p>
-          <button onClick={() => setIsEditing(true)}>Editar</button>
-          <button onClick={handleDelete}>Eliminar</button>
+
+          {!isGuest && (
+            <div>
+            <button onClick={() => setIsEditing(true)}>Editar</button>
+            <button onClick={handleDelete}>Eliminar</button>
+            </div>
+          )}
       </div>
-)}
+          )}
 
           {isEditing && (
       <div>

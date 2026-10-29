@@ -15,6 +15,8 @@ const PostsPage = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
+    const isGuest = localStorage.getItem("userType") === "guest";
+
     const posts = useAppSelector((state) => state.posts.posts);
 
     const loading = useAppSelector((state) => state.posts.loading);
@@ -22,8 +24,6 @@ const PostsPage = () => {
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
-
-    
 
     const showSuccessMessage = (
         message: string
@@ -93,7 +93,9 @@ const PostsPage = () => {
             </div>
             <br></br>
 
+            {!isGuest && (
             <button onClick={() => navigate("/posts/create")}>Crear Nuevo Post</button>
+            )}
 
             
             <div>
