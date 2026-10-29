@@ -73,16 +73,14 @@ const handleDelete = () => {
         <h1>Detalles</h1>
         <p>ID: {id}</p>
 
-          {!isEditing && (
+          {!isEditing ? (
       <div>
           <h1>{post.title}</h1>
           <p>{post.body}</p>
           <button onClick={() => setIsEditing(true)}>Editar</button>
           <button onClick={handleDelete}>Eliminar</button>
       </div>
-)}
-
-          {isEditing && (
+          ) : (
       <div>
           <h2>Editar Post</h2>
           <input
