@@ -10,6 +10,7 @@ import LoginPage from "../app/pages/auth/LoginPage";
 import RegisterPage from "../app/pages/auth/RegisterPage";
 import ProfilePage from "../app/pages/profile/ProfilePage";
 import DashboardPage from "../app/pages/dashboard/DashboardPage";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const AppRouter = () => {
     return (
@@ -23,27 +24,37 @@ const AppRouter = () => {
 
                     <Route
                         path="/posts"
-                        element={<PostsPage />}
+                        element={<ProtectedRoute>
+                            <PostsPage />
+                            </ProtectedRoute>}
                     />
 
                     <Route
                         path="/posts/create"
-                        element={<CreatePostPage />}
+                        element={<ProtectedRoute>
+                            <CreatePostPage />
+                            </ProtectedRoute>}
                     />
 
                     <Route
                         path="/posts/detail/:id"
-                        element={<PostDetailPage />}
+                        element={<ProtectedRoute>
+                            <PostDetailPage />
+                            </ProtectedRoute>}
                     />
 
                     <Route
                         path="/profile"
-                        element={<ProfilePage />}
+                        element={<ProtectedRoute>
+                            <ProfilePage />
+                            </ProtectedRoute>}
                     />
 
                     <Route
                         path="/dashboard"
-                        element={<DashboardPage />}
+                        element={<ProtectedRoute>
+                            <DashboardPage />
+                            </ProtectedRoute>}
                     />
                 </Route>
 
