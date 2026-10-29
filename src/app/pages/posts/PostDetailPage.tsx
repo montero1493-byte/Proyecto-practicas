@@ -75,8 +75,8 @@ const handleDelete = () => {
         <h1>Detalles</h1>
         <p>ID: {id}</p>
 
-          {!isEditing && (
-        <div>
+          {!isEditing ? (
+      <div>
           <h1>{post.title}</h1>
           <p>{post.body}</p>
 
@@ -87,9 +87,7 @@ const handleDelete = () => {
             </div>
           )}
       </div>
-          )}
-
-          {isEditing && (
+          ) : (
       <div>
           <h2>Editar Post</h2>
           <input
