@@ -108,26 +108,27 @@ const DashboardPage = () => {
   };
 
   return (
-    <>
+    <div className="dashboard-page">
     {error && (<p>{error}</p>)}
 
         <h1>Dashboard</h1>
 
-        <div>
-          <div>
+        <div className="dashboard-stats">
+          <div className="card stat-card">
             <h2>Posts Totales</h2>
             <p>{totalPosts}</p>
             </div>
-          <div>
+          <div className="card stat-card">
             <h2>Usuarios Totales</h2>
             <p>{totalUsers}</p>
             </div>
-          <div>
+          <div className="card stat-card">
             <h2>Comentarios Totales</h2>
             <p>{totalComments}</p>
             </div>
         </div>
-        
+
+        <div className="card chart-card">
         {loading ? (
           <p>Cargando grafica</p>) : (
           <HighchartsReact
@@ -135,7 +136,8 @@ const DashboardPage = () => {
             options={chartOptions}
           />
         )}
-    </>
+        </div>
+    </div>
   );
 };
 
