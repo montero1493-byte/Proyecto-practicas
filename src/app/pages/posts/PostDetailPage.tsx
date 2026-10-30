@@ -85,8 +85,8 @@ const handleDelete = () => {
 
           {!isGuest && (
             <div className="post-actions">
-            <button onClick={() => setIsEditing(true)}>Editar</button>
-            <button onClick={handleDelete}>Eliminar</button>
+            <button className="app-button" onClick={() => setIsEditing(true)}>Editar</button>
+            <button className="app-button" onClick={handleDelete}>Eliminar</button>
             </div>
           )}
         </div>
@@ -102,7 +102,7 @@ const handleDelete = () => {
               value={body}
               onChange={(e) => setBody(e.target.value)}
           />
-          <button onClick={() => handleSave()}>Guardar</button>
+          <button className="app-button" onClick={() => handleSave()}>Guardar</button>
         </div>
           )}
       </div>

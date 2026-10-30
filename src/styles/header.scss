@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 32px;
-    background-color: #202020;
+    background-color: #3d4047;
     border-radius: 2px;
     border-bottom: 
         1px solid
@@ -27,7 +27,7 @@
 }
 
 .app-headerNav a {
-    color: #b3b3b3;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: 0.2s;
 }
@@ -36,21 +36,6 @@
     color: var(--primary-color);
 }
 
-/*.app-headerNav button {
-    background-color: var(--danger-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 16px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.app-headerNav button:hover {
-    transform: translateY(-1px);
-}
-*/
-
 .logout-link {
     background: none;
     border: none;
@@ -58,12 +43,12 @@
     color: var(--text-secondary);
     font-size: 1rem;
     cursor: pointer;
-    transition: color 0.2 ease;
+    transition: color 0.2s ease;
 }
 
 .logout-link:hover {
     color: var(--danger-color);
-    transform: scale(0.9)
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

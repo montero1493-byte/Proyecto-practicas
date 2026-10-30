@@ -11,6 +11,7 @@
     border: var(--border-color);
     border-radius: 12px;
     padding: 32px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2)
 }
 
 .detail-post-card h1 {
@@ -36,19 +37,10 @@
     gap: 12px;
 }
 
-.post-actions button {
-    min-width: 100px;
-}
-
 .edit-post-form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.edit-post-form button {
-    width: fit-content;
-    align-items: flex-end;
 }
 
 .edit-post-form h2 {

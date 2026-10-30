@@ -73,9 +73,7 @@ return (
     <>
         {successMessage && (<Toast message={successMessage} />
         )}
-            {/*<header>
-                <h1>Mantenimiento de Posts</h1>
-            </header>*/}
+            
         <br></br>
         <div className="search-input">
             <input
@@ -90,36 +88,41 @@ return (
             <br></br>
 
             {!isGuest && (
-            <button onClick={() => navigate("/posts/create")}>Crear Nuevo Post</button>
+            <button className="app-button"
+                onClick={() => navigate("/posts/create")}>Crear Nuevo Post
+            </button>
             )}
 
             
             <div className="posts-grid">
-    {paginatedPosts.map((post) => (
-        <div
-            key={post.id}
-            className="posts-card"
-            onClick={() =>
-                navigate(`/posts/detail/${post.id}`)
-            }
-        >
-            <h3>{post.title}</h3>
+                {paginatedPosts.map((post) => (
+                <div
+                    key={post.id}
+                    className="posts-card"
+                    onClick={() =>
+                navigate(`/posts/detail/${post.id}`)}>
+            
+          
+                <h3>{post.title}</h3>
 
-            <p>
-                ID: {post.id}
-            </p>
-        </div>
-    ))}
-</div>
+                <p>
+                    ID: {post.id}
+                </p>
+                </div>
+            ))}
+            </div>
+            
             <div className="pagination">
-                <button disabled={page === 1} onClick={() => setPage(page - 1)}>
-                Anterior
+                <button className="app-button" 
+                    disabled={page === 1} onClick={() => setPage(page - 1)}>
+                    Anterior
                 </button>
 
                 <span>Página {page} de {totalPages}</span>
 
-                <button disabled={page === totalPages} onClick={() => setPage(page + 1)}>
-                Siguiente
+                <button className="app-button" 
+                    disabled={page === totalPages} onClick={() => setPage(page + 1)}>
+                    Siguiente
                 </button>
             </div>
         </>

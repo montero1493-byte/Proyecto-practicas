@@ -111,8 +111,6 @@ const DashboardPage = () => {
     <div className="dashboard-page">
     {error && (<p>{error}</p>)}
 
-        <h1>Dashboard</h1>
-
         <div className="dashboard-stats">
           <div className="card stat-card">
             <h2>Posts Totales</h2>

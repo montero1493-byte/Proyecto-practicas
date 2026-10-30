@@ -78,11 +78,11 @@ const HomePage = () => {
               </div>
 
               <div className="login-button ">
-                <button type="submit">
+                <button className="app-button" type="submit">
                   Iniciar sesión
                 </button>
 
-                <button type="button"
+                <button className="app-button" type="button"
                 onClick={handleGuestLogin}>
                   Entrar como invitado
                 </button>
