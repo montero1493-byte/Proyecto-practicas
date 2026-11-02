@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../app/store/hooks/theme";
 
 export const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const {theme, setTheme} = useTheme();
 
     if (location.pathname === "/") {
         return null;
@@ -28,6 +30,20 @@ export const Header = () => {
                     {" | "}
                     <Link to="/profile">Perfil</Link>
                 </nav>
+
+                <button className="theme-button"
+                    onClick={() =>
+                        setTheme(
+                            theme === "dark"
+                                ? "light"
+                                : "dark"
+                        )
+                    }
+                >
+                    {theme === "dark"
+                        ? "☀️"
+                        : "🌙"}
+                </button>    
 
                 <button className="logout-link" onClick={handleuLogout}>
                     Cerrar Sesion

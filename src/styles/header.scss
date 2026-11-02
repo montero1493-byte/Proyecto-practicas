@@ -51,20 +51,16 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .app-header {
         flex-direction: column;
-
         height: auto;
-
         padding: 16px;
     }
 
     .app-header__nav {
         margin-top: 12px;
-
         flex-wrap: wrap;
-
         justify-content: center;
     }
 }

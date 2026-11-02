@@ -16,3 +16,22 @@
 .chart-card {
     padding: 24px;
 }
+
+@media (max-width: 480px) {
+    .dashboard-page {
+        padding: 16px;
+    }
+
+    .dashboard-stats {
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .chart-card {
+        padding: 16px;
+    }
+}

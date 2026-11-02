@@ -11,6 +11,7 @@
     border: var(--border-color);
     border-radius: 12px;
     padding: 32px;
+    box-sizing: border-box;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2)
 }
 
@@ -51,4 +52,30 @@
 .edit-post-form textarea {
     width: 100%;
     min-height: 180px;
+}
+
+@media (max-width: 480px) {
+    .detail-post-page {
+        padding: 16px;
+    }
+
+    .detail-post-card {
+        padding: 20px;
+    }
+
+    .detail-post-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-actions {
+        flex-direction: column;
+    }
+
+    .post-actions button {
+        width: 100%;
+    }
+
+    .edit-post-form textarea {
+        min-height: 140px;
+    }
 }

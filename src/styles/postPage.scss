@@ -45,5 +45,18 @@
     align-items: center;
 }
 
+@media (max-width: 480px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+        margin: 0.75rem;
+    }
 
+    .posts-card {
+        padding: 16px;
+    }
 
+    .pagination {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+}
