@@ -1,0 +1,33 @@
+{
+    "app": {
+        "title": "Titulo",
+        "content": "Contenido",
+        "search": "Buscar",
+        "create": "Crear Nuevo Post",
+        "new-post": "Nuevo Post",
+        "edit": "Editar",
+        "edit-post": "Editar Post",
+        "save": "Guardar",
+        "delete": "Eliminar",
+        "dashboard": "Tablero",
+        "home": "Inicio",
+        "profile": "Perfil",
+        "logout": "Cerrar Sesion",
+        "next": "Siguiente",
+        "previous": "Anterior"
+    },
+    
+    "homepage": {
+        "title": "Bienvenido",
+        "user": "Ususario",
+        "password": "Contraseña",
+        "login": "Iniciar Sesion",
+        "guest": "Entrar como invitado"   
+    },
+
+    "dashboard": {
+        "total-post": "Posts Totales",
+        "total-users": "Usuarios Totales",
+        "total-comments": "Comentarios Totales"
+    }
+}

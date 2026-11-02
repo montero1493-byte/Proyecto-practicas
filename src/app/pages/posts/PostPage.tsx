@@ -4,7 +4,8 @@ import { fetchPosts } from "../../store/PostSlice";
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Toast from "../../../components/toast/Toast"
+import Toast from "../../../components/toast/Toast";
+import { useTranslation } from "react-i18next";
 
 
 const POSTS_PER_PAGE = 10;
@@ -14,6 +15,7 @@ const PostsPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
+    const { t } = useTranslation();
 
     const isGuest = localStorage.getItem("userType") === "guest";
 
@@ -89,7 +91,7 @@ return (
 
             {!isGuest && (
             <button className="app-button"
-                onClick={() => navigate("/posts/create")}>Crear Nuevo Post
+                onClick={() => navigate("/posts/create")}>{t("app.create")}
             </button>
             )}
 
@@ -115,14 +117,14 @@ return (
             <div className="pagination">
                 <button className="app-button" 
                     disabled={page === 1} onClick={() => setPage(page - 1)}>
-                    Anterior
+                    {t("app.previous")}
                 </button>
 
-                <span>Página {page} de {totalPages}</span>
+                <span> {page} - {totalPages}</span>
 
                 <button className="app-button" 
                     disabled={page === totalPages} onClick={() => setPage(page + 1)}>
-                    Siguiente
+                    {t("app.next")}
                 </button>
             </div>
         </>

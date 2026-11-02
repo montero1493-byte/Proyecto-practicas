@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { createPost } from "../../store/PostSlice";
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from 'react-i18next';
 
 const CreatePostPage = () => {
   const [title, setTitle] = useState('');
@@ -10,6 +10,7 @@ const CreatePostPage = () => {
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,11 +30,11 @@ const CreatePostPage = () => {
   return (
     <div className='create-post-page'>
       <div className='create-post-card'>
-      <h1>Nuevo Post</h1>
+      <h1>{t("app.new-post")}</h1>
 
       <form className='create-post-form' onSubmit={handleSubmit}>
         <div>
-          <label>Título</label>
+          <label>{t("app.title")}</label>
 
           <input
             type="text"
@@ -42,7 +43,7 @@ const CreatePostPage = () => {
           />
         </div>
         <div>
-          <label>Contenido</label>
+          <label>{t("app.content")}</label>
 
           <textarea
           value={body}
@@ -50,7 +51,7 @@ const CreatePostPage = () => {
           />
 
         </div>
-        <button className='app-button' type="submit">Crear Post</button>
+        <button className='app-button' type="submit">{t("app.create")}</button>
       </form>
       </div>
     </div>

@@ -44,11 +44,20 @@
     font-size: 1rem;
     cursor: pointer;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .logout-link:hover {
     color: var(--danger-color);
     transform: scale(1.1);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-left: auto;
 }
 
 @media (max-width: 480px) {

@@ -6,13 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { updatePost, deletePost } from "../../store/PostSlice";
 import { useEffect } from "react";
 import { useToast } from "../../store/hooks/useToast";
-import Toast from "../../../components/toast/Toast"
+import Toast from "../../../components/toast/Toast";
+import { useTranslation } from "react-i18next";
 
 
 const PostDetailPage = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const isGuest = localStorage.getItem("userType") === "guest";
 
@@ -72,7 +74,7 @@ const handleDelete = () => {
       )}
     
       <div className="detail-post-card">
-        <h1>Detalles</h1>
+        
         <p className="post-id">ID: {id}</p>
 
           {!isEditing ? (
@@ -85,14 +87,14 @@ const handleDelete = () => {
 
           {!isGuest && (
             <div className="post-actions">
-            <button className="app-button" onClick={() => setIsEditing(true)}>Editar</button>
-            <button className="app-button" onClick={handleDelete}>Eliminar</button>
+            <button className="app-button" onClick={() => setIsEditing(true)}>{t("app.edit")}</button>
+            <button className="app-button" onClick={handleDelete}>{t("app.delete")}</button>
             </div>
           )}
         </div>
           ) : (
         <div className="edit-post-form">
-          <h2>Editar Post</h2> 
+          <h2>{t("app.edit-post")}</h2> 
           <input
               type="text"
               value={title}
@@ -102,7 +104,7 @@ const handleDelete = () => {
               value={body}
               onChange={(e) => setBody(e.target.value)}
           />
-          <button className="app-button" onClick={() => handleSave()}>Guardar</button>
+          <button className="app-button" onClick={() => handleSave()}>{t("app.save")}</button>
         </div>
           )}
       </div>
