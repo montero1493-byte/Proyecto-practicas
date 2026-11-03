@@ -1,0 +1,35 @@
+.create-post-page {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xl);
+}
+
+.create-post-card {
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--space-md);
+    padding: var(--space-xl);
+    box-shadow: var(--space-shadow) var(--shadow-color);
+}
+
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.create-post-form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.create-post-form button {
+    align-self: flex-end;
+}
+
+.create-post-card h1 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}

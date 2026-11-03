@@ -1,0 +1,49 @@
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-sm);
+}
+
+.posts-card {
+    background-color: var(--bg-card);
+    border: 1px solid
+        var(--border-color);
+    border-radius: var(--space-md);
+    padding: var(--space-lg);
+    cursor: pointer;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+        box-shadow: var(--space-shadow) var(--shadow-color);
+}
+
+.posts-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-color);
+}
+
+.posts-card h3 {
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+}
+
+.posts-card p {
+    color: var(--text-secondary);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    align-items: center;
+}
+
+
+

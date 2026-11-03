@@ -1,0 +1,54 @@
+.detail-post-page {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xl);
+}
+
+.detail-post-card {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--bg-card);
+    border: var(--border-color);
+    border-radius: var(--space-md);
+    padding: var(--space-xl);
+    box-shadow: var(--space-shadow) var(--shadow-color);
+}
+
+.detail-post-card h1 {
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.post-id {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.post-content {
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xl);
+    white-space: pre-wrap;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-md);
+}
+
+.edit-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.edit-post-form h2 {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.edit-post-form textarea {
+    width: 100%;
+    min-height: 180px;
+}

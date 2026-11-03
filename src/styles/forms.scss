@@ -1,0 +1,18 @@
+input,
+textarea,
+select {
+    width: 100%;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 
+        1px solid
+        var(--border-color);
+    border-radius: var(--space-xs);
+    padding: var(--space-sm);
+    box-sizing: border-box;
+}
+
+.search-input {
+    width: 300px;
+    margin-left: var(--space-sm);
+}

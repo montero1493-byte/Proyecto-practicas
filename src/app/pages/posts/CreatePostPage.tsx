@@ -27,10 +27,11 @@ const CreatePostPage = () => {
   };
 
   return (
-    <>
+    <div className='create-post-page'>
+      <div className='create-post-card'>
       <h1>Nuevo Post</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className='create-post-form' onSubmit={handleSubmit}>
         <div>
           <label>Título</label>
 
@@ -49,9 +50,10 @@ const CreatePostPage = () => {
           />
 
         </div>
-        <button type="submit">Crear Post</button>
+        <button className='app-button' type="submit">Crear Post</button>
       </form>
-    </>
+      </div>
+    </div>
   );
 };
 

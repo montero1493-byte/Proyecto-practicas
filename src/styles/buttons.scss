@@ -1,0 +1,16 @@
+.app-button {
+    cursor: pointer;
+    border: none;
+    border-radius: var(--space-xs);
+    transition: 0.2s;
+    padding: var(--space-xs);
+    margin: var(--space-sm);
+    background-color: var(--bg-button);
+    color: white;
+    box-shadow: 0 2px 2px var(--shadow-color);
+    width: 150px;
+}
+
+button:hover {
+    opacity: 0.6;
+}
