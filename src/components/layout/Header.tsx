@@ -21,7 +21,7 @@ export const Header = () => {
     return (
         <>
             <header className="app-header">
-                <nav className="app-headerNav">
+                <nav className="app-header__nav">
                     <Link to="/">Home</Link>
                     {" | "}
                     <Link to="/posts">Posts</Link>
