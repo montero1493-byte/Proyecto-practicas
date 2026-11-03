@@ -2,6 +2,7 @@
     --bg-primary: #262627;
     --bg-secondary: #4b5563;
     --bg-card: #555d6c;
+    --bg-button: #183c56a9;
 
     --text-primary: #F8FAFC;
     --text-secondary: #CBD5E1;
@@ -12,5 +13,16 @@
     --primary-hover: #2563eb;
     --danger-color: #ef4444;
 
-    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-color: #0000007e;
+
+
+    //Spacing
+    --space-xxs: 2px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 60px;
+    --space-shadow: 0 10px 10px 0;
 }

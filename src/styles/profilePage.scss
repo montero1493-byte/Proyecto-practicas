@@ -1,7 +1,7 @@
 .profile-page {
     display: flex;
     justify-content: center;
-    padding: 32px;
+    padding: var(--space-xl);
 }
 
 .profile-card {
@@ -9,20 +9,20 @@
     max-width: 700px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2)
+    border-radius: var(--space-md);
+    padding: var(--space-xl);
+    box-shadow: var(--space-shadow) var(--shadow-color);
 }
 
 .profile-card h1 {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: var(--space-xl);
 }
 
 .profile-info {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0;
+    padding: var(--space-md) 0;
     border-bottom: 1px solid var(--border-color);
 }
 

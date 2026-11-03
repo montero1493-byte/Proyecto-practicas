@@ -1,17 +1,17 @@
 .app-header {
-    height: 60px;
+    height: var(--space-2xl);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 32px;
+    padding: 0 var(--space-xl);
     background-color: #3d4047;
-    border-radius: 2px;
+    border-radius: var(--space-xxs);
     border-bottom: 
         1px solid
         var(--border-color);
     box-shadow: 
         0 2px 8px
-        rgba(0, 0, 0, 0.2);
+        var(--shadow-color);
 }
 
 /*.app-headerLogo {
@@ -20,19 +20,19 @@
     color: var(--text-primary);
 }*/
 
-.app-headerNav {
+.app-header__Nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: var(--space-lg);
 }
 
-.app-headerNav a {
+.app-header__Nav a {
     color: var(--text-secondary);
     text-decoration: none;
     transition: 0.2s;
 }
 
-.app-headerNav a:hover {
+.app-header__Nav a:hover {
     color: var(--primary-color);
 }
 
@@ -57,11 +57,11 @@
 
         height: auto;
 
-        padding: 16px;
+        padding: var(--space--md);
     }
 
     .app-header__nav {
-        margin-top: 12px;
+        margin-top: var(--space--md);
 
         flex-wrap: wrap;
 
