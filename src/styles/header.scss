@@ -14,25 +14,19 @@
         var(--shadow-color);
 }
 
-/*.app-headerLogo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}*/
-
-.app-header__Nav {
+.app-header__nav {
     display: flex;
     align-items: center;
     gap: var(--space-lg);
 }
 
-.app-header__Nav a {
+.app-header__nav a {
     color: var(--text-secondary);
     text-decoration: none;
     transition: 0.2s;
 }
 
-.app-header__Nav a:hover {
+.app-header__nav a:hover {
     color: var(--primary-color);
 }
 
