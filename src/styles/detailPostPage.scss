@@ -52,3 +52,29 @@
     width: 100%;
     min-height: 180px;
 }
+
+@media (max-width: 480px) {
+    .detail-post-page {
+        padding: 16px;
+    }
+
+    .detail-post-card {
+        padding: 20px;
+    }
+
+    .detail-post-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-actions {
+        flex-direction: column;
+    }
+
+    .post-actions button {
+        width: 100%;
+    }
+
+    .edit-post-form textarea {
+        min-height: 140px;
+    }
+}

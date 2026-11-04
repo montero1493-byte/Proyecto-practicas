@@ -34,3 +34,18 @@
 .profile-info span:last-child {
     color: var(--text-primary);
 }
+
+@media (max-width: 480px) {
+    .profile-page {
+        padding: 16px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-info {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
