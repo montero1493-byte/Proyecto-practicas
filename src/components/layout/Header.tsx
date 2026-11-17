@@ -24,7 +24,7 @@ export const Header = () => {
     return (
         <>
             <header className="app-header">
-                <nav className="app-headerNav">
+                <nav className="app-header__nav">
                     <Link to="/">{t("app.home")}</Link>
                     {" | "}
                     <Link to="/posts">Posts</Link>
