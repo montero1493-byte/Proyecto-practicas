@@ -7,7 +7,7 @@ export const Breadcrumbs = () => {
 
     return (
         <div>
-            {paths.length === 0
+            {!paths.length
                 ? "Home"
                 : `Home / ${paths.join(" / ")}`}
         </div>
