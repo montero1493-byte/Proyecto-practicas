@@ -1,9 +1,7 @@
-import axios from "axios";
-
-const COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
+import { api } from "./Api";
 
 export const getComments = async () => {
-    const response = await axios.get(COMMENTS_URL);
+    const response = await api.get("/comments");
 
     return response.data;
 };

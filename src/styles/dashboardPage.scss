@@ -1,12 +1,12 @@
 .dashboard-page {
-    padding: 32px;
+    padding: var(--space-xl);
 }
 
 .dashboard-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 24px;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
 }
 
 .stat-card {
@@ -14,24 +14,5 @@
 }
 
 .chart-card {
-    padding: 24px;
-}
-
-@media (max-width: 480px) {
-    .dashboard-page {
-        padding: 16px;
-    }
-
-    .dashboard-stats {
-        gap: 12px;
-        margin-bottom: 16px;
-    }
-
-    .stat-card {
-        padding: 16px;
-    }
-
-    .chart-card {
-        padding: 16px;
-    }
+    padding: var(--space-lg);
 }
