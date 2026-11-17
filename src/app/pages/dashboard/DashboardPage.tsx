@@ -4,12 +4,15 @@ import { getComments } from "../../../services/CommentService";
 import Highcharts from "highcharts";
 import type { Comment } from "../../../types/comment";
 import HighchartsReactModule from "highcharts-react-official";
+import { useTranslation } from "react-i18next";
 
 const HighchartsReact = (HighchartsReactModule as any).default;
 
 const DashboardPage = () => {
   const posts = useAppSelector((state) =>
     state.posts.posts);
+
+  const { t } = useTranslation();
 
   const totalPosts = posts.length;
 
@@ -113,15 +116,15 @@ const DashboardPage = () => {
 
         <div className="dashboard-stats">
           <div className="card stat-card">
-            <h2>Posts Totales</h2>
+            <h2>{t("dashboard.total-post")}</h2>
             <p>{totalPosts}</p>
             </div>
           <div className="card stat-card">
-            <h2>Usuarios Totales</h2>
+            <h2>{t("dashboard.total-users")}</h2>
             <p>{totalUsers}</p>
             </div>
           <div className="card stat-card">
-            <h2>Comentarios Totales</h2>
+            <h2>{t("dashboard.total-comments")}</h2>
             <p>{totalComments}</p>
             </div>
         </div>

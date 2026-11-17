@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const ProfilePage = () => {
+  const { t } = useTranslation();
+
   const userType = 
     localStorage.getItem("userType");
 
@@ -9,10 +13,10 @@ const ProfilePage = () => {
   return (
     <div className="profile-page">
       <div className="profile-card">
-        <h1>Perfil</h1>
+        <h1>{t("app.profile")}</h1>
 
         <div className="profile-info">
-          <span>Usuario:</span>
+          <span>{t("homepage.user")}:</span>
           <span>{username}</span>
         </div>
 

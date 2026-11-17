@@ -1,0 +1,34 @@
+{
+    "app": {
+        "title": "Title",
+        "content": "Content",
+        "search": "Search",
+        "create": "Create New Post",
+        "new-post": "New Post",
+        "edit": "Edit",
+        "edit-post": "Edit Post",
+        "save": "Save",
+        "delete": "Delete",
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "profile": "Profile",
+        "logout": "Logout",
+        "next": "Next",
+        "previous": "Previous"
+    },
+
+    "homepage": {
+        "title": "Welcome",
+        "user": "User",
+        "password": "Password",
+        "login": "Login",
+        "guest": "Enter as a guest"   
+    },
+
+    "dashboard": {
+        "total-post": "Total Posts",
+        "total-users": "Total Users",
+        "total-comments": "Total Comments"
+    }
+
+}

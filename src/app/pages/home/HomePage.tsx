@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -49,12 +51,12 @@ const HomePage = () => {
     <>
       <div className="login-page">
         <div className="login-card">
-            <h1>Bienvenido</h1>
+            <h1>{t("homepage.title")}</h1>
 
             <form className="login-form" onSubmit={handleLogin}>
               <div>
                 <label htmlFor="username">
-                  Usuario
+                  {t("homepage.user")}
                 </label>
 
                 <input
@@ -66,7 +68,7 @@ const HomePage = () => {
               </div>
               <div>
                 <label htmlFor="password">
-                  Contraseña
+                  {t("homepage.password")}
                 </label>
 
                 <input
@@ -79,12 +81,12 @@ const HomePage = () => {
 
               <div className="login-button ">
                 <button className="app-button" type="submit">
-                  Iniciar sesión
+                  {t("homepage.login")}
                 </button>
 
                 <button className="app-button" type="button"
                 onClick={handleGuestLogin}>
-                  Entrar como invitado
+                  {t("homepage.guest")}
                 </button>
               </div>
 
