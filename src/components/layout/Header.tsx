@@ -36,6 +36,7 @@ export const Header = () => {
 
                 <div className="header-actions">
                     <button className="theme-button"
+                    data-testid="theme-toggle"
                         onClick={() =>
                             setTheme(
                                 theme === "dark"
